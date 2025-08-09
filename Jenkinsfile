@@ -1,4 +1,4 @@
-@Library('Shared') _
+ @Library('Shared') _
 pipeline {
     agent { label "Agent" }
 
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "docker-compose up -d"
+                sh "docker-compose down && docker-compose up -d"
             }
         }
      
